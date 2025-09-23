@@ -13,6 +13,7 @@
 
 # Python (FastAPI)
 /ai-service/__pycache__/
+/ai-service/app/__pycache__/
 /ai-service/.venv/
 /ai-service/*.pyc
 
