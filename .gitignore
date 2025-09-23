@@ -1,0 +1,24 @@
+# General
+.DS_Store
+*.env
+*.log
+
+# Java (Spring Boot)
+/backend/target/
+/backend/*.iml
+
+# Node (React)
+/frontend/node_modules/
+/frontend/dist/
+
+# Python (FastAPI)
+/ai-service/__pycache__/
+/ai-service/.venv/
+/ai-service/*.pyc
+
+# Docker
+**/docker-compose.override.yml
+
+# IDE
+.idea/
+.vscode/
