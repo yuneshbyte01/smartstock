@@ -1,38 +1,24 @@
-package com.smartstock.model;
+package com.smartstock.dto;
 
-import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-
 import lombok.*;
 import java.math.BigDecimal;
-import java.util.UUID;
 
-@Entity
-@Table(name = "products", uniqueConstraints = {
-        @UniqueConstraint(columnNames = "sku")
-})
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Product {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+public class CreateProductRequest {
 
     @NotBlank
     @Size(max = 100)
-    @Column(nullable = false)
     private String name;
 
     @NotBlank
     @Size(max = 50)
-    @Column(nullable = false, unique = true)
     private String sku;
 
     @NotBlank
-    @Column(nullable = false)
     private String category;
 
     private String brand;
@@ -41,11 +27,9 @@ public class Product {
     @Min(0)
     private Integer stock;
 
-    @Column(columnDefinition = "TEXT")
     private String description;
 
     @NotBlank
-    @Column(nullable = false)
     private String unit;
 
     @NotNull
@@ -60,6 +44,5 @@ public class Product {
 
     private String imageUrl;
 
-    @NotNull
-    private Boolean enabled = true;
+    private Boolean enabled;
 }
