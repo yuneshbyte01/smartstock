@@ -1,7 +1,9 @@
-package com.smartstock.security;
+package com.smartstock.config;
 
+import com.smartstock.security.JwtAuthenticationFilter;
 import org.springframework.context.annotation.*;
 import org.springframework.security.authentication.*;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.*;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -37,6 +39,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
+                .cors(Customizer.withDefaults())
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/auth/**").permitAll()
