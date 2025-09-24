@@ -17,8 +17,12 @@
 - category
 - unit
 - price
-- stock
 - reorderThreshold
+- brand
+- description
+- barcode
+- imageUrl
+- enabled
 
 ### 3. Supplier
 - id
